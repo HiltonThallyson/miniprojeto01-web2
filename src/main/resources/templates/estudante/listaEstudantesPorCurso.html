@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudantes por curso</title>
+</head>
+<body>
+    <p>BTI</p>
+    <ul>
+        <li th:each="estudante:${estudantesBTI}">
+            <span
+                th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
+        </li>
+    </ul>
+    <p>EngComp</p>
+    <ul>
+        <li th:each="estudante:${estudantesEngComp}">
+            <span
+                th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
+        </li>
+    </ul>
+    <p>EngSoft</p>
+    <ul>
+        <li th:each="estudante:${estudantesEngSoft}">
+            <span
+                th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
+        </li>
+    </ul>
+    <br><br>
+    <a href="getListaEstudantes">Ver lista de estudantes</a><br>
+    <a href="showForm">Formulário de estudantes</a><br>
+</body>
+</html>
