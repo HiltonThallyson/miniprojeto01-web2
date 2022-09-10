@@ -2,8 +2,6 @@ package com.jeanlima.mvcapp.controller;
 
 import java.util.List;
 
-import javax.swing.text.html.FormSubmitEvent.MethodType;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -11,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jeanlima.mvcapp.model.Estudante;
@@ -66,6 +63,19 @@ public class EstudanteController {
         model.addAttribute("estudantesEngComp", estudantesEngComp);
         model.addAttribute("estudantesEngSoft", estudantesEngSoft);
         return "estudante/listaEstudantesPorCurso";
+    }
+
+    @RequestMapping("/getListaEstudantesPorLinguagem")
+    public String showListaEstudantesPorLinguagem(Model model) {
+        List<Estudante> estudantesJava = estudanteService.getListaEstudanteByLanguage("Java");
+        List<Estudante> estudantesC = estudanteService.getListaEstudanteByLanguage("C");
+        List<Estudante> estudantesPython = estudanteService.getListaEstudanteByLanguage("Python");
+        List<Estudante> estudantesJs = estudanteService.getListaEstudanteByLanguage("Javasript");
+        model.addAttribute("estudantesJava", estudantesJava);
+        model.addAttribute("estudantesC", estudantesC);
+        model.addAttribute("estudantesPython", estudantesPython);
+        model.addAttribute("estudantesJs", estudantesJs);
+        return "estudante/listaEstudantePorLinguagem";
     }
 
     

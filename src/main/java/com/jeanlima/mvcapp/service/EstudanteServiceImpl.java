@@ -59,6 +59,16 @@ public class EstudanteServiceImpl implements EstudanteService{
         }
         return estudantes;
     }
+    @Override
+    public List<Estudante> getListaEstudanteByLanguage(String language) {
+        List<Estudante> estudantes = new ArrayList<Estudante>();
+        for (Estudante estudante : this.estudantes) {
+            if(estudante.getLinguagem().equals(language)){
+                estudantes.add(estudante);
+            }
+        }
+        return estudantes;
+    }
 
     
 }

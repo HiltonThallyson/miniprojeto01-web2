@@ -16,6 +16,7 @@ public interface EstudanteService {
     public Estudante getEstudanteById(Integer id);
     public List<Estudante> getListaEstudante();
     public List<Estudante> getListaEstudanteByCurso(String curso);
+    public List<Estudante> getListaEstudanteByLanguage(String language);
 
 
 

@@ -83,6 +83,11 @@ public class Estudante {
         this.id = id;
     }
 
+
+    public Object getLanguage() {
+        return null;
+    }
+
     
     
 }

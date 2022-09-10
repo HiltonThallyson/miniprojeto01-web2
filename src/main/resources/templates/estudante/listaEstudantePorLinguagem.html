@@ -4,33 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudantes por curso</title>
+    <title>Estudantes por linguagem</title>
 </head>
 <body>
-    <p>BTI</p>
+    <p>Java</p>
     <ul>
-        <li th:each="estudante:${estudantesBTI}">
+        <li th:each="estudante:${estudantesJava}">
             <span
                 th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
         </li>
     </ul>
-    <p>EngComp</p>
+    <p>C</p>
     <ul>
-        <li th:each="estudante:${estudantesEngComp}">
+        <li th:each="estudante:${estudantesC}">
             <span
                 th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
         </li>
     </ul>
-    <p>EngSoft</p>
+    <p>Python</p>
     <ul>
-        <li th:each="estudante:${estudantesEngSoft}">
+        <li th:each="estudante:${estudantesPython}">
             <span
                 th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
         </li>
     </ul>
+    <p>Js</p>
+    <ul>
+        <li th:each="estudante:${estudantesJs}">
+            <span
+                th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
+        </li>
+    </ul>
+    
     <br><br>
     <a href="getListaEstudantes">Ver lista de estudantes</a><br>
-    <a href="getListaEstudantesPorLinguagem">Ver lista de estudantes por linguagem</a><br>
+    <a href="getListaEstudantesPorCurso">Ver lista de estudantes por curso</a><br>
     <a href="showForm">Formulário de estudantes</a><br>
 </body>
 </html>
