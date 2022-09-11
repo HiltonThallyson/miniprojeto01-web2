@@ -30,12 +30,21 @@ public class EstudanteController {
         return "estudante/formEstudante";
     }
 
+
     @RequestMapping("/addEstudante")
     public String showFormEstudante(@ModelAttribute("estudante") Estudante estudante,  Model model){
 
         estudanteService.salvarEstudante(estudante);
         model.addAttribute("estudante", estudante);
         return "estudante/paginaEstudante";
+    }
+
+    @GetMapping("/deletarEstudante")
+    public String deletarEstudante(@RequestParam(value="id") Integer id, Model model) {
+        Estudante estudante = estudanteService.getEstudanteById(id);
+        estudanteService.deletarEstudante(estudante);
+        // model.addAttribute("estudante", estudante);
+        return showListaEstudante(model);
     }
 
     @GetMapping("/detalharEstudante")

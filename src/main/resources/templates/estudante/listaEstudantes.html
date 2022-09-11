@@ -17,7 +17,7 @@
     <ul>
         <li th:each="estudante : ${estudantes}">
             <span
-                th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} + ' - Curso:  ' + ${estudante.curso} + '    ' "/><a th:href="@{detalharEstudante(id=${estudante.id})}" >Detalhes</a>
+                th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} + ' - Curso:  ' + ${estudante.curso} "/><a style="text-decoration: none;" th:href="@{detalharEstudante(id=${estudante.id})}" >&nbsp;&nbsp;Detalhes&nbsp;&nbsp;</a><a style="text-decoration: none;" th:href="@{deletarEstudante(id=${estudante.id})}" >Deletar</a>
             
         </li>
     </ul>
@@ -41,7 +41,7 @@
       </table>
     <br><br>
     <a href="showForm">Formulário de estudantes</a><br>
-    <a href="getListaEstudantesPorCurso">Ver lista de estudantes por curso</a>
+    <a href="getListaEstudantesPorCurso">Ver lista de estudantes por curso</a><br>
     <a href="getListaEstudantesPorLinguagem">Ver lista de estudantes por linguagem</a>
 </body>
 
