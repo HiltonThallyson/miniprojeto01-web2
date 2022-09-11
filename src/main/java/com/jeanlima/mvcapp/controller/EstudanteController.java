@@ -70,7 +70,7 @@ public class EstudanteController {
         List<Estudante> estudantesJava = estudanteService.getListaEstudanteByLanguage("Java");
         List<Estudante> estudantesC = estudanteService.getListaEstudanteByLanguage("C");
         List<Estudante> estudantesPython = estudanteService.getListaEstudanteByLanguage("Python");
-        List<Estudante> estudantesJs = estudanteService.getListaEstudanteByLanguage("Javasript");
+        List<Estudante> estudantesJs = estudanteService.getListaEstudanteByLanguage("Javascript");
         model.addAttribute("estudantesJava", estudantesJava);
         model.addAttribute("estudantesC", estudantesC);
         model.addAttribute("estudantesPython", estudantesPython);

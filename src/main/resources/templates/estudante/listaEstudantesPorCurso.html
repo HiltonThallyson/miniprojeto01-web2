@@ -14,6 +14,8 @@
                 th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
         </li>
     </ul>
+    <p>Numero de estudantes: <span th:text="${estudantesBTI.size()}" /></p>
+    <br>
     <p>EngComp</p>
     <ul>
         <li th:each="estudante:${estudantesEngComp}">
@@ -21,6 +23,8 @@
                 th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
         </li>
     </ul>
+    <p>Numero de estudantes: <span th:text="${estudantesEngSoft.size()}" /></p>
+    <br>
     <p>EngSoft</p>
     <ul>
         <li th:each="estudante:${estudantesEngSoft}">
@@ -28,6 +32,8 @@
                 th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
         </li>
     </ul>
+    <p>Numero de estudantes: <span th:text="${estudantesEngComp.size()}" /></p>
+    <br>
     <br><br>
     <a href="getListaEstudantes">Ver lista de estudantes</a><br>
     <a href="getListaEstudantesPorLinguagem">Ver lista de estudantes por linguagem</a><br>

@@ -7,13 +7,16 @@
     <title>Estudantes por linguagem</title>
 </head>
 <body>
-    <p>Java</p>
+    <p>Java
+    </p>
     <ul>
         <li th:each="estudante:${estudantesJava}">
             <span
                 th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
         </li>
     </ul>
+    <p>Numero de estudantes: <span th:text="${estudantesJava.size()}" /></p>
+    <br>
     <p>C</p>
     <ul>
         <li th:each="estudante:${estudantesC}">
@@ -21,6 +24,7 @@
                 th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
         </li>
     </ul>
+    <p>Numero de estudantes: <span th:text="${estudantesC.size()}" /></p>    <br>
     <p>Python</p>
     <ul>
         <li th:each="estudante:${estudantesPython}">
@@ -28,6 +32,7 @@
                 th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
         </li>
     </ul>
+    <p>Numero de estudantes: <span th:text="${estudantesPython.size()}" /></p>    <br>
     <p>Js</p>
     <ul>
         <li th:each="estudante:${estudantesJs}">
@@ -35,7 +40,7 @@
                 th:text="${estudante.primeiroNome} +' '+ ${estudante.ultimoNome} "/>
         </li>
     </ul>
-    
+    <p>Numero de estudantes: <span th:text="${estudantesJs.size()}" /></p>    <br>
     <br><br>
     <a href="getListaEstudantes">Ver lista de estudantes</a><br>
     <a href="getListaEstudantesPorCurso">Ver lista de estudantes por curso</a><br>
