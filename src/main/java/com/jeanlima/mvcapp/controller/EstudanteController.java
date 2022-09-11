@@ -44,7 +44,7 @@ public class EstudanteController {
         Estudante estudante = estudanteService.getEstudanteById(id);
         estudanteService.deletarEstudante(estudante);
         // model.addAttribute("estudante", estudante);
-        return showListaEstudante(model);
+        return "redirect:getListaEstudantes";
     }
 
     @GetMapping("/detalharEstudante")
