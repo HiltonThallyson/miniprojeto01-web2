@@ -9,7 +9,7 @@ import com.jeanlima.mvcapp.model.Curso;
 @Component
 public class CursoServiceImpl implements CursoService {
 
-    public ArrayList<Curso> cursos;
+    public ArrayList<Curso> cursos = new ArrayList<Curso>();
 
     @Override
     public void removerCurso(Curso curso) {
@@ -18,8 +18,10 @@ public class CursoServiceImpl implements CursoService {
 
     @Override
     public void salvarCurso(Curso curso) {
-        if (!cursos.contains(curso)) {
-            cursos.add(curso);
+        Integer id = cursos.size()+1;
+        Curso novoCurso = new Curso(id, curso.getNome());
+        if (!cursos.contains(novoCurso)) {
+            cursos.add(novoCurso);
         }
     }
 

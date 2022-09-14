@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso</title>
+    
+</head>
+<body>
+       <h1><p th:text="${curso.nome}"></h1>
+        <p th:text="'Seja bem-vindo ao curso' + ' ' + ${curso.nome}"></p>
+        <p>"Boa sorte! Muahahaha"</p>
+
+        <br><br>
+        <a href="/estudante/getListaEstudantes">Ver lista de estudantes</a><br>
+        <a href="/estudante/getListaEstudantesPorCurso">Ver lista de estudantes por curso</a><br>
+        <a href="/estudante/getListaEstudantesPorLinguagem">Ver lista de estudantes por linguagem</a><br>
+        <a href="/estudante/showForm">Formulário de estudantes</a><br>
+        <a href="/curso/showForm">Formulário de curso</a>
+    
+</body>
+</html>

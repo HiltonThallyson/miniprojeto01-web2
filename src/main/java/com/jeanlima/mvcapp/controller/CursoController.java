@@ -28,6 +28,6 @@ public class CursoController {
     public String addCurso(@ModelAttribute("curso") Curso curso, Model model) {
         cursoService.salvarCurso(curso);
         model.addAttribute("curso", curso);
-        return "curso/showCursos";
+        return "curso/paginaCurso";
     }
 }
