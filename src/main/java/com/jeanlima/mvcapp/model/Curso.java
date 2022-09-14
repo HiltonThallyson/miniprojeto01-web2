@@ -1,12 +1,12 @@
 package com.jeanlima.mvcapp.model;
 
 public class Curso {
-    private Integer id;
+    private int id;
     private String nome;
 
     public Curso(){}
 
-    public Curso(Integer id, String nome){
+    public Curso(String nome){
         this.nome = nome;
     }
 
@@ -21,6 +21,7 @@ public class Curso {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }

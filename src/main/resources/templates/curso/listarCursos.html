@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+
+</head>
+
+<body>
+    <p>Lista de cursos cadastrados: </p>
+    <ul>
+        <li th:each="curso : ${cursos}">
+            <span
+                th:text="${curso.nome} + ' ' " /><a style="text-decoration: none;" th:href="@{deletarCurso(id=${curso.id})}" >&nbspDeletar</a>
+            
+        </li>
+    </ul>
+    <br><br>
+    <a href="/curso/showForm">Formulário de curso</a><br>
+    <a href="/estudante/showForm">Formulátio de estudante</a><br>
+    <a href="/estudante/getListaEstudantes">Ver lista de estudantes</a>
+</body>
+
+</html>

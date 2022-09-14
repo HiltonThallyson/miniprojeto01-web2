@@ -1,11 +1,15 @@
 package com.jeanlima.mvcapp.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jeanlima.mvcapp.model.Curso;
 import com.jeanlima.mvcapp.service.CursoService;
@@ -29,5 +33,19 @@ public class CursoController {
         cursoService.salvarCurso(curso);
         model.addAttribute("curso", curso);
         return "curso/paginaCurso";
+    }
+
+    @RequestMapping("/listarCursos")
+    public String listarCursos(Model model) {
+        ArrayList<Curso> cursos = cursoService.getCursos();
+        model.addAttribute("cursos", cursos);
+        return "curso/listarCursos";
+    }
+
+    @GetMapping("/deletarCurso")
+    public String deletarCurso(@RequestParam(value="id") Integer id, Model model) {
+        Curso curso = cursoService.getCursoById(id);
+        cursoService.removerCurso(curso);
+        return "redirect:listarCursos";
     }
 }
